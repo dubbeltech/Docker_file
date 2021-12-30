@@ -1,0 +1,27 @@
+docker ps: show the running container
+docker stop <names>: stops the container.
+docker ps -a: shows all containers both active and non active containers
+docker rm <names>: to remove permanently.
+docker image: to see a list of images running
+docker rmi <image> to remove images
+docker pull <image> will not install it but just in storage
+docker run ubuntu will run and exit but will not be visible because ubuntu is an OS and can be viewed with docker ps -a command
+docker run ubuntu sleep 5: 
+docker exec command is used to run command on an running container
+docker run -detach <name>
+docker attatch <id>
+docker rm $(docker ps -aq) to remove all conatainers
+docker stop $(docker ps -aq) ro stop all containers
+docker run -i (interactive mode)
+docker run -it (sudo terminal). 
+172.17.0.2 internal IP
+192.168.1.5
+docker run -p 80:5000 <image> to map the port to the IP
+docker run -v dir:dir
+docker inspect <name>
+docker logs <names>
+To run jenkins and keep its data map the dir of the jenkins to the dir of the host
+docker run -p 8080:8080 -v /root/my-jenkins-data: /var/jenkins_home -u root jenkins
+you can find the network details by using docker inspect.
+To run script you add all command before the image name
+docker run -p 38282:8080 kodecloud
