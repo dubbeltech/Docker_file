@@ -1,0 +1,22 @@
+First create a redis database container called redis, image redis:alpine.
+
+if you are unsure, check the hints section for the exact commands.
+
+Solution:
+
+docker run -d --name redis redis:alpine
+
+Problem:
+
+Next, create a simple container called clickcounter with the image kodekloud/click-counter, link it to the redis container that we created in the previous task and then expose it on the host port 8085
+The clickcounter app run on port 5000.
+if you are unsure, check the hints section for the exact commands.
+
+Solution
+
+docker run -d --name clickcounter -p 8085:5000 --link redis:redis kodekloud/click-counter
+
+Problem: remove the created container
+docker stop $(docker ps)
+docker rm redis
+docker rm clickcounter
