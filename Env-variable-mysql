@@ -1,0 +1,9 @@
+Deploy a mysql database using the mysql image and name it mysql-db.
+Set the database password to use db_pass123. Lookup the mysql image on Docker Hub and 
+identify the correct environment variable to use for setting the root password.
+
+Solutions
+
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123  mysql 
+
+To know the env field of mysql: docker exec -it mysql-db env
