@@ -1,0 +1,6 @@
+Run a container named blue-app using image kodekloud/simple-webapp and set the environment variable APP_COLOR to blue. 
+Make the application available on port 38282 on the host. The application listens on port 8080.
+
+solution
+
+docker run -e APP_COLOR=blue -p 38282:8080 --name blue-app kodekloud/simple-webapp
